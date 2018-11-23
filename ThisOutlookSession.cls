@@ -42,11 +42,12 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             Set FolderInc2 = Store.GetDefaultFolder(olFolderInbox).Parent.Folders("01_INCIDENTS_GENERIQUES")
             Set FolderInc2 = FolderInc2.Folders("INCIDENTS_PRODUCTION")
             Set Destfolder = Folder.Parent.Folders("01_MAIL_TRAITE")
+            Set Destfolfer2 = Folder.Parent.Folders("01_MAIL_TRAITE")
             
             For intCount = Folder.Items.Count To 1 Step -1
                 Set objVariant = Folder.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
                         objVariant.Move Destfolder
                         lngMovedItems = lngMovedItems + 1
                 End If
@@ -56,7 +57,7 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             For intCount = FolderCom.Items.Count To 1 Step -1
                 Set objVariant = FolderCom.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
                     objVariant.Move Destfolder
                     lngMovedItems = lngMovedItems + 1
                 End If
@@ -65,7 +66,7 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             For intCount = FolderEvol.Items.Count To 1 Step -1
                 Set objVariant = FolderEvol.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
                     objVariant.Move Destfolder
                     lngMovedItems = lngMovedItems + 1
                 End If
@@ -74,7 +75,7 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             For intCount = FolderIncident.Items.Count To 1 Step -1
                 Set objVariant = FolderIncident.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
                     objVariant.Move Destfolder
                     lngMovedItems = lngMovedItems + 1
                 End If
@@ -83,8 +84,8 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             For intCount = FolderInc.Items.Count To 1 Step -1
                 Set objVariant = FolderInc.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
-                 objVariant.Move Destfolder
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
+                 objVariant.Move Destfolder2
                  lngMovedItems = lngMovedItems + 1
                 End If
             Next
@@ -92,8 +93,8 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
             For intCount = FolderInc2.Items.Count To 1 Step -1
                 Set objVariant = FolderInc2.Items.Item(intCount)
                 DoEvents
-                If objVariant.Class = olMail And objVariant.Categories = "Traité" Then
-                    objVariant.Move Destfolder
+                If objVariant.Class = olMail And objVariant.Categories = "TraitÃ©" Then
+                    objVariant.Move Destfolder2
                     lngMovedItems = lngMovedItems + 1
                 End If
             Next
@@ -138,7 +139,7 @@ Private Sub Application_ItemLoad(ByVal Item As Object)
         
     Next
     'Display the number of items that were moved.
-   ' MsgBox " " & lngMovedItems & " messages(s)ont été déplacés ans le dossier communication."
+   ' MsgBox " " & lngMovedItems & " messages(s)ont Ã©tÃ© dÃ©placÃ©s ans le dossier communication."
     Set objDestFolder = Nothing
    
 End Sub
